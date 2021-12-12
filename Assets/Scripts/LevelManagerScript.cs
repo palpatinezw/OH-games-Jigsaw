@@ -2,29 +2,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class LevelManagerScript : MonoBehaviour
 {
     public int noOfPieces;
 
     public Text coverScreenText;
-    public GameObject coverScreenImage;
+    public GameObject coverScreen;
+    public GameObject resumeButton;
+
+    public Button[] buttons;
+    public string[] btnStrs;
 
     private bool paused = false;
 
     void Start() {
-        //
+        coverScreen.SetActive(false);
+        resumeButton.SetActive(false);
+        
+        int btncount = Math.Min(btnStrs.Length, buttons.Length);
+        for (int i = 0; i < btncount; i++) {
+            string temp = btnStrs[i];
+            buttons[i].onClick.AddListener(() => BtnClick(temp));
+        }
     }
 
     void Update() {
-    	if (noOfPieces == 0) GameWin();
+    	if (noOfPieces == 0 && !paused) GameWin();
 
         // broadcast functions that dont have in game UI yet
         if (Input.GetKeyDown("r")) BroadcastMessage("Reset");
-        if (Input.GetKeyDown("p")) Pause();
-        if (Input.GetKeyDown("c")) Resume();
+        if (Input.GetKeyDown("p")) BroadcastMessage("Pause");
+        if (Input.GetKeyDown("c")) BroadcastMessage("Resume");
     }
     // noOfPieces counts number of pieces out of position
+
+    void BtnClick(string str) {
+        BroadcastMessage(str);
+    }
     
     public void SetAnswerCorrect() {
     	noOfPieces--;
@@ -38,6 +54,7 @@ public class LevelManagerScript : MonoBehaviour
     public void TimeEnd() {
         // for when timer runs out
         ShowCover("Time's Up!");
+        paused = true;
         BroadcastMessage("Pause");
     }
     public void GameWin() {
@@ -45,30 +62,30 @@ public class LevelManagerScript : MonoBehaviour
         gameObject.GetComponent<TimerScript>().timerRunning = false;
         float finalTime = gameObject.GetComponent<TimerScript>().timer;
         ShowCover("Congrats!");
+        paused = true;
         BroadcastMessage("Pause");
     }
 
     public void Pause() {
         if (paused) return;
-        // for when timer runs out
+        
+        resumeButton.SetActive(true);
         paused = true;
         ShowCover("Game Paused");
-        BroadcastMessage("Pause");
     }
     public void Resume() {
         if (!paused) return;
-        // for when timer runs out
+        resumeButton.SetActive(false);
         paused = false;
         HideCover();
-        BroadcastMessage("Resume");
     }
 
     void ShowCover(string DisplayText) {
         Debug.Log("Show Cover");
         coverScreenText.text = DisplayText;
-        coverScreenImage.GetComponent<CanvasGroup>().alpha = 1.0f;
+        coverScreen.SetActive(true);
     }
     void HideCover() {
-        coverScreenImage.GetComponent<CanvasGroup>().alpha = 0.0f;
+        coverScreen.SetActive(false);
     }
 }

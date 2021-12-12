@@ -13,7 +13,7 @@ public class LevelSelectorScript : MonoBehaviour
     void Start()
     {
         int lvlCount = Math.Min(levels.Length, buttons.Length);
-        Debug.Log(lvlCount);
+        // Debug.Log(lvlCount);
         for (int i = 0; i < lvlCount; i++) {
         	Debug.Log(i);
         	int temp = i;
