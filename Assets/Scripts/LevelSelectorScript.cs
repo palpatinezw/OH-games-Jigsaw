@@ -10,9 +10,13 @@ public class LevelSelectorScript : MonoBehaviour
     public string[] levels;
     public Button[] buttons;
 
+    GameObject gameManager;
+
     void Start()
     {
         int lvlCount = Math.Min(levels.Length, buttons.Length);
+        gameManager = GameObject.FindGameObjectWithTag("GameController");
+        
         // Debug.Log(lvlCount);
         for (int i = 0; i < lvlCount; i++) {
         	Debug.Log(i);
@@ -22,8 +26,20 @@ public class LevelSelectorScript : MonoBehaviour
     }
 
     void LoadLevel (int levelId) {
-    	Debug.Log(levels.Length);
-    	Debug.Log(levelId);
+    	// Debug.Log(levels.Length);
+    	// Debug.Log(levelId);
     	SceneManager.LoadSceneAsync(levels[levelId]);
+    }
+
+    public void UpdateButton(int unlockedLevel) {
+    	 // = gameManager.GetComponent<GameManagerScript>().levelsPlayed;
+    	int lvlCount = Math.Min(levels.Length, buttons.Length);
+    	for (int i = 0; i < lvlCount; i++) {
+        	if (i > unlockedLevel) {
+        		buttons[i].interactable = false;
+        	} else {
+        		buttons[i].interactable = true;
+        	}
+        }
     }
 }

@@ -36,7 +36,7 @@ public class TimerScript : MonoBehaviour
 	        	timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 	        } else {
 	        	gameObject.GetComponent<LevelManagerScript>().TimeEnd();
-	        	timer = 0;
+	        	timer = 0.0f;
 	        	timerRunning = false;
 	        }
         }
