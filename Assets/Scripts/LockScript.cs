@@ -23,6 +23,7 @@ public class LockScript : MonoBehaviour
 
 	public void LockEnter() {
 		locked = true;
+		levelManager.GetComponent<LevelManagerScript>().Lock();
 	}
 	public void LockExit() {
 		locked = false;

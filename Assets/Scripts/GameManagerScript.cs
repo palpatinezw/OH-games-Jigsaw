@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class GameManagerScript : MonoBehaviour
 {
-    public int gameMode = 0; // 0 is default countdown mode, 1 is timer mode, more modes in future
-    int levelsPlayed = 0;
+    public int gameMode = -1; // 0 is no timer mode, 1 is timer mode, more modes in future
+    public int curlevel = -1; 
+    public int levelsPlayed = 0;
 
     GameObject levelSelector;
 
@@ -30,11 +31,16 @@ public class GameManagerScript : MonoBehaviour
     	if (Input.GetKeyDown("0")) PlayerPrefs.SetInt("LevelsPlayed", 0);
     }
 
-    public void LevelComplete (int level) {
-    	if (level == levelsPlayed) {
+    public void LevelComplete () {
+    	if (curlevel == levelsPlayed) {
     		levelsPlayed++;
     		PlayerPrefs.SetInt("LevelsPlayed", levelsPlayed);
     		levelSelector.GetComponent<LevelSelectorScript>().UpdateButton(levelsPlayed);
     	}
+    	curlevel = -1;
+    }
+
+    public void SetGameMode(int newGameMode) {
+    	gameMode = newGameMode;
     }
 }

@@ -40,6 +40,7 @@ public class LevelUIScript : MonoBehaviour
     void BtnClick(string str) {
         if (str == "Return") {
             SceneManager.LoadSceneAsync("LevelSelectScene");
+            return;
         }
 
         
@@ -69,6 +70,10 @@ public class LevelUIScript : MonoBehaviour
         paused = false;
         resumeButton.SetActive(false);
         HideCover();
+    }
+    public void Retry() {
+    	Scene scene = SceneManager.GetActiveScene();
+    	SceneManager.LoadScene(scene.name);
     }
 
     void ShowCover(string DisplayText) {

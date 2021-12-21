@@ -11,6 +11,7 @@ public class LevelSelectorScript : MonoBehaviour
     public Button[] buttons;
 
     GameObject gameManager;
+    public GameObject gameMenu;
 
     void Start()
     {
@@ -28,6 +29,7 @@ public class LevelSelectorScript : MonoBehaviour
     void LoadLevel (int levelId) {
     	// Debug.Log(levels.Length);
     	// Debug.Log(levelId);
+    	gameManager.GetComponent<GameManagerScript>().curlevel = levelId;
     	SceneManager.LoadSceneAsync(levels[levelId]);
     }
 
@@ -41,5 +43,6 @@ public class LevelSelectorScript : MonoBehaviour
         		buttons[i].interactable = true;
         	}
         }
+        gameMenu.GetComponent<MenuScript>().UpdateButton(unlockedLevel);
     }
 }

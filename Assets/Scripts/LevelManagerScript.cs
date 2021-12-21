@@ -13,14 +13,15 @@ public class LevelManagerScript : MonoBehaviour
 
     GameObject gameManager;
 
+    int gameMode;
+
     void Start() {
         gameManager = GameObject.FindGameObjectWithTag("GameController");
+        gameMode = gameManager.GetComponent<GameManagerScript>().gameMode;
         // gameManager = gameManagers[0];
     }
 
     void Update() {
-    	if (noOfPieces == 0 && !paused) BroadcastMessage("GameWin");
-
         // broadcast functions that dont have in game UI yet
         if (Input.GetKeyDown("r")) BroadcastMessage("Reset");
         if (Input.GetKeyDown("p")) BroadcastMessage("Pause");
@@ -47,6 +48,11 @@ public class LevelManagerScript : MonoBehaviour
 
         UICanvas.GetComponent<LevelUIScript>().TimeEnd();
     }
+
+    public void Lock() {
+        //used in place of void update to fix the last piece danglinging in the middle of nowhere
+        if (noOfPieces == 0 && !paused) BroadcastMessage("GameWin");
+    }
     public void GameWin() {
         // when all pieces are in position
         gameObject.GetComponent<TimerScript>().timerRunning = false;
@@ -54,7 +60,7 @@ public class LevelManagerScript : MonoBehaviour
         paused = true;
         BroadcastMessage("Pause");
 
-        gameManager.GetComponent<GameManagerScript>().LevelComplete(LevelNo);
+        gameManager.GetComponent<GameManagerScript>().LevelComplete();
     }
 
     public void Pause() {
