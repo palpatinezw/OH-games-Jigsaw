@@ -64,11 +64,13 @@ public class LevelUIScript : MonoBehaviour
         paused = true;
         if (levelManager.GetComponent<LevelManagerScript>().noOfPieces != 0 && levelManager.GetComponent<TimerScript>().timer != 0.0f) resumeButton.SetActive(true);
         ShowCover("Game Paused");
+        returnButton.SetActive(true);
     }
     public void Resume() {
         if (!paused) return;
         paused = false;
         resumeButton.SetActive(false);
+        returnButton.SetActive(false);
         HideCover();
     }
     public void Retry() {

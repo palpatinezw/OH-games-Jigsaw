@@ -603,6 +603,10 @@ MonoBehaviour:
   lockTrigger: {fileID: 803479372}
   lockTriggerOffset: {x: 0, y: -0.8, z: 0}
   answer: 8
+  spawnLimitBot: -8
+  spawnLimitTop: 8
+  spawnLimitLeft: 9
+  spawnLimitRight: 16
 --- !u!54 &190201531
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -733,6 +737,10 @@ MonoBehaviour:
   lockTrigger: {fileID: 357015337}
   lockTriggerOffset: {x: 0, y: -0.8, z: 0}
   answer: 13
+  spawnLimitBot: -8
+  spawnLimitTop: 8
+  spawnLimitLeft: 9
+  spawnLimitRight: 16
 --- !u!54 &197172695
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1618,6 +1626,10 @@ MonoBehaviour:
   lockTrigger: {fileID: 1034650277}
   lockTriggerOffset: {x: 0, y: -0.8, z: 0}
   answer: 15
+  spawnLimitBot: -8
+  spawnLimitTop: 8
+  spawnLimitLeft: 9
+  spawnLimitRight: 16
 --- !u!54 &485394513
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1748,6 +1760,10 @@ MonoBehaviour:
   lockTrigger: {fileID: 1314161713}
   lockTriggerOffset: {x: 0, y: -0.8, z: 0}
   answer: 3
+  spawnLimitBot: -8
+  spawnLimitTop: 8
+  spawnLimitLeft: 9
+  spawnLimitRight: 16
 --- !u!54 &502523273
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2528,6 +2544,10 @@ MonoBehaviour:
   lockTrigger: {fileID: 763137580}
   lockTriggerOffset: {x: 0, y: -0.8, z: 0}
   answer: 7
+  spawnLimitBot: -8
+  spawnLimitTop: 8
+  spawnLimitLeft: 9
+  spawnLimitRight: 16
 --- !u!54 &698951185
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2786,6 +2806,10 @@ MonoBehaviour:
   lockTrigger: {fileID: 619537642}
   lockTriggerOffset: {x: 0, y: -0.8, z: 0}
   answer: 10
+  spawnLimitBot: -8
+  spawnLimitTop: 8
+  spawnLimitLeft: 9
+  spawnLimitRight: 16
 --- !u!54 &716236092
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3744,6 +3768,10 @@ MonoBehaviour:
   lockTrigger: {fileID: 606806451}
   lockTriggerOffset: {x: 0, y: -0.8, z: 0}
   answer: 1
+  spawnLimitBot: -8
+  spawnLimitTop: 8
+  spawnLimitLeft: 9
+  spawnLimitRight: 16
 --- !u!54 &971994351
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4081,6 +4109,10 @@ MonoBehaviour:
   lockTrigger: {fileID: 1379119143}
   lockTriggerOffset: {x: 0, y: -0.8, z: 0}
   answer: 6
+  spawnLimitBot: -8
+  spawnLimitTop: 8
+  spawnLimitLeft: 9
+  spawnLimitRight: 16
 --- !u!54 &1008199775
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4294,6 +4326,10 @@ MonoBehaviour:
   lockTrigger: {fileID: 1760903344}
   lockTriggerOffset: {x: 0, y: -0.8, z: 0}
   answer: 4
+  spawnLimitBot: -8
+  spawnLimitTop: 8
+  spawnLimitLeft: 9
+  spawnLimitRight: 16
 --- !u!54 &1033680701
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4549,6 +4585,10 @@ MonoBehaviour:
   lockTrigger: {fileID: 988790321}
   lockTriggerOffset: {x: 0, y: -0.8, z: 0}
   answer: 11
+  spawnLimitBot: -8
+  spawnLimitTop: 8
+  spawnLimitLeft: 9
+  spawnLimitRight: 16
 --- !u!54 &1055074610
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5922,6 +5962,10 @@ MonoBehaviour:
   lockTrigger: {fileID: 1254652751}
   lockTriggerOffset: {x: 0, y: -0.8, z: 0}
   answer: 2
+  spawnLimitBot: -8
+  spawnLimitTop: 8
+  spawnLimitLeft: 9
+  spawnLimitRight: 16
 --- !u!54 &1531633205
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6511,6 +6555,10 @@ MonoBehaviour:
   lockTrigger: {fileID: 176765138}
   lockTriggerOffset: {x: 0, y: -0.8, z: 0}
   answer: 9
+  spawnLimitBot: -8
+  spawnLimitTop: 8
+  spawnLimitLeft: 9
+  spawnLimitRight: 16
 --- !u!54 &1790396549
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6897,6 +6945,10 @@ MonoBehaviour:
   lockTrigger: {fileID: 1996341438}
   lockTriggerOffset: {x: 0, y: -0.8, z: 0}
   answer: 14
+  spawnLimitBot: -8
+  spawnLimitTop: 8
+  spawnLimitLeft: 9
+  spawnLimitRight: 16
 --- !u!54 &1870011715
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7109,6 +7161,10 @@ MonoBehaviour:
   lockTrigger: {fileID: 1415924163}
   lockTriggerOffset: {x: 0, y: -0.8, z: 0}
   answer: 5
+  spawnLimitBot: -8
+  spawnLimitTop: 8
+  spawnLimitLeft: 9
+  spawnLimitRight: 16
 --- !u!54 &1916148609
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7449,6 +7505,10 @@ MonoBehaviour:
   lockTrigger: {fileID: 1737731281}
   lockTriggerOffset: {x: 0, y: -0.8, z: 0}
   answer: 12
+  spawnLimitBot: -8
+  spawnLimitTop: 8
+  spawnLimitLeft: 9
+  spawnLimitRight: 16
 --- !u!54 &1966639930
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -9,14 +9,22 @@ public class MouseDraggability : MonoBehaviour {
 	public Vector3 lockTriggerOffset = new Vector3(0.0f, -0.8f, 0.0f); // position offset of the lock trigger from the main puzzle piece object (0, -0.8, 0)
 	public int answer;
 
+	public float spawnLimitBot = -8.0f;
+	public float spawnLimitTop = 8.0f;
+	public float spawnLimitLeft = 9.0f;
+	public float spawnLimitRight = 16.0f;
+
  	private Vector3 offset;
  	private Vector3 screenPoint;
  	private bool locked = false;
  	private bool paused = false;
+ 	// private bool init;
 
  	private Vector3 initPos;
 
  	void Start() {
+ 		// init = true;
+ 		transform.position = new Vector3(Random.Range(spawnLimitLeft, spawnLimitRight), Random.Range(4.98f, 5.02f), Random.Range(spawnLimitBot, spawnLimitTop));
  		initPos = gameObject.transform.position;
  	}
 
