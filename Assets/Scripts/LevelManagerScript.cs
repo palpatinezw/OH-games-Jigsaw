@@ -56,7 +56,7 @@ public class LevelManagerScript : MonoBehaviour
     public void GameWin() {
         // when all pieces are in position
         gameObject.GetComponent<TimerScript>().timerRunning = false;
-        float finalTime = gameObject.GetComponent<TimerScript>().timer;
+        // if (gameMode == 1) float finalTime = gameObject.GetComponent<TimerScript>().timer;
         paused = true;
         BroadcastMessage("Pause");
 
