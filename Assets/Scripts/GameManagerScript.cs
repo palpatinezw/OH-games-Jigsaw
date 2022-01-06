@@ -28,7 +28,10 @@ public class GameManagerScript : MonoBehaviour
     }
 
     void Update() {
-    	if (Input.GetKeyDown("0")) PlayerPrefs.SetInt("LevelsPlayed", 0);
+    	if (Input.GetKeyDown("0")) {
+    		PlayerPrefs.SetInt("LevelsPlayed", 0);
+    		Debug.Log("LevelsPlayed RESET");
+    	}
     }
 
     public void LevelComplete () {

@@ -35,11 +35,11 @@ public class LevelManagerScript : MonoBehaviour
     
     public void SetAnswerCorrect() {
     	noOfPieces--;
-        Debug.Log("Piece added : " + noOfPieces);
+        // Debug.Log("Piece added : " + noOfPieces);
     }
     public void SetAnswerWrong() {
     	noOfPieces++;
-        Debug.Log("Piece removed : " + noOfPieces);
+        // Debug.Log("Piece removed : " + noOfPieces);
     }
 
     public void TimeEnd() {
@@ -56,7 +56,11 @@ public class LevelManagerScript : MonoBehaviour
     public void GameWin() {
         // when all pieces are in position
         gameObject.GetComponent<TimerScript>().timerRunning = false;
-        // if (gameMode == 1) float finalTime = gameObject.GetComponent<TimerScript>().timer;
+        if (gameMode == 2) {
+            float finalTime = gameObject.GetComponent<TimerScript>().timer;
+            Debug.Log(finalTime);
+        }
+
         paused = true;
         BroadcastMessage("Pause");
 

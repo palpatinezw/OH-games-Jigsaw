@@ -20,7 +20,7 @@ public class LevelSelectorScript : MonoBehaviour
         
         // Debug.Log(lvlCount);
         for (int i = 0; i < lvlCount; i++) {
-        	Debug.Log(i);
+        	// Debug.Log(i);
         	int temp = i;
         	buttons[i].onClick.AddListener(() => LoadLevel(temp));
         }
