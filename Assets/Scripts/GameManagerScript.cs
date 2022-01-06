@@ -31,6 +31,7 @@ public class GameManagerScript : MonoBehaviour
     	if (Input.GetKeyDown("0")) {
     		PlayerPrefs.SetInt("LevelsPlayed", 0);
     		Debug.Log("LevelsPlayed RESET");
+    		PlayerPrefs.Save();
     	}
     }
 
@@ -38,6 +39,7 @@ public class GameManagerScript : MonoBehaviour
     	if (curlevel == levelsPlayed) {
     		levelsPlayed++;
     		PlayerPrefs.SetInt("LevelsPlayed", levelsPlayed);
+    		PlayerPrefs.Save();
     		levelSelector.GetComponent<LevelSelectorScript>().UpdateButton(levelsPlayed);
     	}
     	curlevel = -1;
